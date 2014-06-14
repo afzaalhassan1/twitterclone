@@ -6,8 +6,12 @@ class User extends CI_Controller {
   {
     $this->load->model('User_m');
 
-    $form_data = $this->input->post();
-    $this->User_m->insert($form_data);
-    var_dump($form_data);die;
+    $user_data = $this->input->post();
+    $this->User_m->insert($user_data);
+
+    $this->session->set_userdata('user', $user_data);
+
+
+    redirect('/tweets');
   }
 }
