@@ -7,10 +7,14 @@ class User_m extends CI_Model {
   }
 
   function insert($data) {
-    
     $this->db->insert('users', $data);
 
-    return;
+    $data['id'] = $this->db->insert_id();
+
+    return $data;
   }
 
+  function check($username, $password) {
+    die("skfaf");
+  }
 }
