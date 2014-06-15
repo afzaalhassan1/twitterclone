@@ -24,6 +24,14 @@ class User extends CI_Controller {
   {
     $this->load->model('User_m');
     $signin_data = $this->input->post();
-    $signin = $this->User_m->check($signin_data['username'], $signin_data['password']);
+    $user_data = $this->User_m->check($signin_data['username'], $signin_data['password']);
+    $this->session->set_userdata('user_session', $user_data);
+
+    if(count($user_data) === 0) {
+      // Bad password
+      die('bad');
+    } else {
+      die('good');
+    }
   }
 }

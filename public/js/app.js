@@ -27,6 +27,12 @@ $(document).ready(function() {
       password: passwordData
     }
 
-    $.post('/user/signin', data);
+    $.post('/user/signin', data, function(response) {
+      if (response=='good') {
+        window.location = '/tweets';
+      } else {
+        alert("Bad password, Login again!");
+      }
+    });
   });
 });

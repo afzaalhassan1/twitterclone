@@ -15,6 +15,9 @@ class User_m extends CI_Model {
   }
 
   function check($username, $password) {
-    die("skfaf");
+    $this->db->where('username', $username);
+    $this->db->where('password', $password);
+
+    return $this->db->get('users')->row_array();
   }
 }
