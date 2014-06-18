@@ -10,10 +10,16 @@ class Tweet_m extends CI_Model {
     
     $this->db->insert('tweets', $tweet);
 
-    return;
+    return $this->db->insert_id();
   }
 
   function get_all() {
+    $this->db->order_by('tweet_time', 'desc');
     return $this->db->get('tweets')->result_array();
+  }
+
+  function get($tweet_id) {
+    $this->db->where('id', $tweet_id);
+    return $this->db->get('tweets')->row_array();
   }
 }

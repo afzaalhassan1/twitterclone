@@ -22,6 +22,16 @@ class Tweets extends CI_Controller {
     $user_info = $this->session->userdata('user_session');
     $tweet_info['user_id'] = $user_info['id'];
 
-    $this->Tweet_m->insert($tweet_info);
+    $new_tweet_id = $this->Tweet_m->insert($tweet_info);
+    echo $new_tweet_id;
   }
+
+  public function getTweet($tweetbyuser) {
+    $this->load->model('Tweet_m');
+    $tweet = $this->Tweet_m->get($tweetbyuser);
+    
+    echo json_encode($tweet);
+
+  }
+
 }
