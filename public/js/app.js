@@ -39,7 +39,7 @@ $(document).ready(function() {
     });
   });
 
-  $(".giveTweet").click(function(e) {
+  $(".giveTweet2").click(function(e) {
     e.preventDefault();
 
     replyModal = $("#replyModal").modal();
@@ -65,15 +65,15 @@ $(document).ready(function() {
                 <div class="col-md-2">';
         newReplyHtml += response.tweet_time;
 
-        //newTweetHtml += '</div> \
+        //newReplyHtml += '</div> \
                 //<div class="col-md-2 col-md-offset-8"> \
                   //<button class="btn btn-primary giveTweet" type="button">Reply</button> \
-               // </div> \
-            //  </div> \
+              // </div> \
            // </div> \
-        //  </div>'
+           //</div> \
+        //</div>'
 
-        $('#allTweets').prepend(newReplyHtml);
+        $('#allReplys').prepend(newReplyHtml);
       });
     });
   });

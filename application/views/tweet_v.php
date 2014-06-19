@@ -27,11 +27,9 @@
             </div>
           </div>
         </div>
-      <?php endforeach; ?>
     </div>
   </div>
-</div>
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="replyModal">
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="replyModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -42,14 +40,17 @@
         <form class="form-inline" role="form">
           <div class="form-group">
           <label class="sr-only">Enter your Reply</label>
-          <input type="text" class="form-control" placeholder="Enter your Reply" id="newReply">
+          <input type="text" class="form-control" placeholder="Enter your Reply" id="replyModal">
           </div>
         </form>  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="giveTweet">Post</button>
+        <button type="button" class="btn btn-primary" id="giveTweet2">Post</button>
       </div>
     </div>
+  </div>
+  </div>
+  <?php endforeach; ?>
   </div>
 </div>

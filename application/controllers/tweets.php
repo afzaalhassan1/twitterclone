@@ -18,16 +18,16 @@ class Tweets extends CI_Controller {
   {
     $this->load->model('Tweet_m');
     $tweet_info = $this->input->post();
-    //$reply_info = $this->input->post();
+    $reply_info = $this->input->post();
 
     $user_info = $this->session->userdata('user_session');
     $tweet_info['user_id'] = $user_info['id'];
-    //$reply_info['parent_id']=$user_info['user_id'];
+    $reply_info['parent_id']=$user_info['id'];
 
     $new_tweet_id = $this->Tweet_m->insert($tweet_info);
-    //$new_reply_id = $this->Tweet_m->insert($reply_info);
+    $new_reply_id = $this->Tweet_m->insert($reply_info);
     echo $new_tweet_id;
-    //echo $new_reply_id;
+    echo $new_reply_id;
   }
 
   public function getTweet($tweetbyuser) {
