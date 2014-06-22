@@ -39,45 +39,13 @@ $(document).ready(function() {
     });
   });
 
-  $(".giveTweet2").click(function(e) {
+  $(".giveReplies").click(function(e) {
     e.preventDefault();
 
     replyModal = $("#replyModal").modal();
     $('#replyModal').modal('');
 
-    datareply = {
-      tweet: new_reply
-    }
-    $.post('/tweets/create', datareply, function(response) {
-      newReplyId = response;
-
-      $.get('/tweets/getReply/' + newReplyId, function(response) {
-
-        response = JSON.parse(response);
-
-        newReplyHtml = '<div class="panel panel-default"> \
-            <div class="panel-heading">Username of Reply</div> \
-            <div class="panel-body"> \
-              <p>';
-        newReplyHtml += response.tweet;
-        newReplyHtml += '</p> \
-              <div class="row"> \
-                <div class="col-md-2">';
-        newReplyHtml += response.tweet_time;
-
-        //newReplyHtml += '</div> \
-                //<div class="col-md-2 col-md-offset-8"> \
-                  //<button class="btn btn-primary giveTweet" type="button">Reply</button> \
-              // </div> \
-           // </div> \
-           //</div> \
-        //</div>'
-
-        $('#allReplys').prepend(newReplyHtml);
-      });
-    });
-  });
-  });
+  }
 
   $("#signin_button").click(function(e) {
     e.preventDefault();

@@ -27,6 +27,7 @@
             </div>
           </div>
         </div>
+      <?php endforeach; ?>
     </div>
   </div>
   <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="replyModal">
@@ -46,11 +47,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="giveTweet2">Post</button>
+        <button type="button" class="btn btn-primary" id="giveReplies">Post</button>
       </div>
     </div>
   </div>
   </div>
-  <?php endforeach; ?>
   </div>
 </div>

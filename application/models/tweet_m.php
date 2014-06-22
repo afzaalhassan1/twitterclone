@@ -22,9 +22,4 @@ class Tweet_m extends CI_Model {
     $this->db->where('id', $tweet_id);
     return $this->db->get('tweets')->row_array();
   }
-
-  function getr($reply_id) {
-    $this->db->where('id', $reply_id);
-    return $this->db->get('tweets')->row_array();
-  }
 }
