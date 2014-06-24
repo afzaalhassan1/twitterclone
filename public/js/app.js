@@ -41,11 +41,10 @@ $(document).ready(function() {
 
   $(".giveReplies").click(function(e) {
     e.preventDefault();
-
+    alert('work');
     replyModal = $("#replyModal").modal();
-    $('#replyModal').modal('');
 
-  }
+  });
 
   $("#signin_button").click(function(e) {
     e.preventDefault();
