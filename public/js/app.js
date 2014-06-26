@@ -48,7 +48,7 @@ $(document).ready(function() {
       tweet: replyModal
     }
 
-    $.post('/tweets/create', data, function(response) {
+    $.post('/tweets/createreply', data, function(response) {
       newTweetId = response;
 
       $.get('/tweets/getTweet/' + newTweetId, function(response) {
