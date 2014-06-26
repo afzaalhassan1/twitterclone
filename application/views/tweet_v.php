@@ -52,4 +52,22 @@
       </div>
     </div>
   </div>
+  <div class= "col-md-8">
+    <div id="allReplies">
+      <?php foreach ($tweets as $tweet): ?>
+        <div class="panel panel-default">
+          <div class="panel-heading">Username</div>
+          <div class="panel-body">
+            <p><?php echo $tweet['tweet']; ?></p>
+            <div class = "row">
+              <div class="col-md-2"><?php echo $tweet['tweet_time']; ?></div>
+              <div class="col-md-2 col-md-offset-8">
+                <button type="button" class="btn btn-primary giveReplies">Reply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
 </div>
